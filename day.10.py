@@ -112,6 +112,130 @@ obj.add(2)
 obj.add(3, 4)
 obj.add(1,2,3)'''
 
+# ! -----> abstraction
+# the process of hiding the implimentation details us abstraction
+
+# ?eg:1
+
+'''class triangle(shapes):
+    def traingle_sides(self):
+        print("4 sides")
+
+
+    def name(self):
+        print("Iam triangle")
+
+class square:
+    def square(self):
+        print("4 sides")
+        def sides(self):
+         pass
+        
+tr = triangle()
+tr.triangle_sides()
+tr.name()'''
+
+
+# ! rules to define abstract class1
+
+# 1.) Abstract class cannot instantiated
+# 2.) from abc import ABC, abstractmethod
+# 3.) subclass the normal class with ABC
+# 4.) Convert the normal method inside the abstract class to abstract method
+# 5.) All the child classes have to be subclassed with abstract class
+# 6.) The abstract method should be present in the child classes
+
+# ! eg:2
+# super()
+from abc import ABC, abstractmethod
+class c1(ABC):
+    @abstractmethod
+    def m1(self):
+        print("this is abstract class")
+class c2(c1):
+    def m2(self):
+        super().m1()
+        print("iam child 1")
+    def m1(self):
+         pass
+class2 = c2()
+class2.m2()
+
+
+# *eg:3
+'''from abc import ABC, abstractmethod
+class password(ABC):
+    @abstractmethod
+    def pwd(self):
+        pswd = "nandu20000$"
+        return pswd
+
+class login(password):
+    def validata(self, name, password):
+        if super().pwd() == password:
+            print("welcome", name,'!!')
+            print("login  successfully")
+        else:
+            print("please check the password")
+    def pwd(self):
+        pass
+                
+
+
+login = login()
+name = input("enter the name")
+pwd = input("enter the password:")
+login.validata(name, pwd)'''
+
+
+# ! encapsulation
+# eg:1
+'''class car:
+    __name = "BWE" # private variable
+    print(__name)
+
+c1 = car()
+print(c1.name)# error
+c1.name = "Audi"
+print(c1.name) # error'''
+# ? ----> eg:2
+# ? accessing private data the class
+'''class c1:
+    __phone = '909090909090'
+
+    def display(self):
+        print(self.__phone)
+c = c1()
+c.display()'''
+
+# * -----> eg:3
+# ? declare private method
+'''class class1:
+    def __m1(self): # private method
+         print("Iam private method")
+    def __init__(self):
+        self.__m1()
+
+
+c = class1()'''
+
+# ? nested class
+class class1:
+    class class2:
+        name = "nandu"
+
+        def display(self):
+            print(self.name)
+            
+    obj1 = class2()
+obj = class1()
+obj.obj1.display()
+    
+
+        
+
+        
+
 
 
 
